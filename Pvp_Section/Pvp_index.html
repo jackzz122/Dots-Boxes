@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pvp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .avatar{
+            overflow: hidden;
+        }
+        .infor_settings{
+            min-width: 150px;
+        }
+        .infor_settings > p{
+            @apply px-4 py-2 hover:bg-slate-600 flex items-center justify-between cursor-pointer
+        }
+    }
+</style>
+
+<body class="bg-slate-800 h-screen">
+    <main class="w-8/12 mx-auto h-full">
+        <div class="infor player text-white flex justify-between items-center">
+            <div class="player1 flex items-center">
+                <div class="avatar mr-2 relative">
+                    <img src="../img/avatar_Player2.png" alt="" class="avatar border-none">
+                </div>
+                <div class="player">
+                    <p>PlayerBlue </p>
+                    <p class="countDown1">0:20</p>
+                </div>
+            </div>
+            <div class="timer flex text-4xl">
+                <p class="playerScore1">0</p>
+                <p>:</p>
+                <p class="playerScore2">0</p>
+            </div>
+            <div class="player2 flex items-center">
+                <div class="player mr-2">
+                    <p class="">PlayerRed</p>
+                    <p class="text-right countDown2">0:20</p>
+                </div>
+                <div class="avatar">
+                    <img src="../img/avatar_Player2.png" alt="avatar border-none">
+                </div>
+            </div>
+        </div>
+        <div class="infor game bg-slate-700 flex justify-center items-center">
+
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-purple-600 p-12  rounded-md show-box hidden">
+            <div>
+                <p class="text-white">Do you really want to quit?</p>
+                <br>
+                <div class="flex justify-center">
+                    <button
+                        class="border border-red-500 min-w-20 rounded-lg hover:bg-red-500 hover:text-white transition-all ease-in mr-2 text-center text-white p-2 yesBtn">Yes</button>
+                    <button
+                        class="border border-blue-500 min-w-20 rounded-lg hover:bg-blue-500 hover:text-white transition-all ease-in text-center text-white p-2 CancelBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 border-2 border-purple-600 p-12 -translate-y-1/2 rounded-md show-mode hidden ">
+            <div>
+                <p class="text-center text-white">Settings Modes</p>
+                <br>
+                <div class="">
+                    <label for="rows" class="inline-block w-32 text-white mr-4">Enter rows: </label>
+                    <input id="rows" type="number" max="12" class="rounded-md mb-4 ">
+                    <br>
+                    <label for="columns" class="inline-block w-32 text-white mr-4">Enter columns: </label>
+                    <input id="columns" type="number" max="12" class="rounded-md mb-4 ">
+                    <br>
+                    <div class="flex justify-center">
+                        <button
+                            class="border border-red-500 min-w-20 rounded-lg hover:bg-red-500 hover:text-white transition-all ease-in mr-2 text-center text-white p-2 ConfirmBtn">Confirm</button>
+                        <button
+                            class="border border-blue-500 min-w-20 rounded-lg hover:bg-blue-500 hover:text-white transition-all ease-in text-center text-white p-2 closeBtn">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infor settings flex items-center justify-between">
+            <div class="flex">
+                <button class="rounded-md text-white border-2 border-slate-700 p-2 mr-2 btn_quit">Quit</button>
+                <div class="container_settings">
+                    <button class="setting-btn relative">
+                        <span class="bar bar1"></span>
+                        <span class="bar bar2"></span>
+                        <span class="bar bar1"></span>
+                    </button>
+                </div>
+            </div>
+            <ion-icon name="happy-outline" class="text-white text-4xl cursor-pointer"></ion-icon>
+        </div>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./pvp.js"></script>
+    <script src="./function.js"></script>
+</body>
+
+</html>

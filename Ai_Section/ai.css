@@ -1,0 +1,217 @@
+main {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.infor:nth-child(2) {
+    grid-row-start: 2;
+    grid-row-end: 10;
+}
+
+.infor:nth-child(3) {
+    grid-row-start: 10;
+    grid-row-end: 11;
+}
+
+.btn_quit {
+    transition: border .2s linear;
+}
+
+.btn_quit:hover {
+    border-color: rgb(148 163 184);
+}
+
+.setting-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: rgb(51 65 85);
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+
+.bar {
+    width: 50%;
+    height: 2px;
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 2px;
+}
+
+.bar::before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    background-color: rgb(126, 117, 255);
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 5px white;
+}
+
+.bar1::before {
+    transform: translateX(-4px);
+}
+
+.bar2::before {
+    transform: translateX(4px);
+}
+
+.setting-btn:hover .bar1::before {
+    transform: translateX(4px);
+}
+
+.setting-btn:hover .bar2::before {
+    transform: translateX(-4px);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.avatar img {
+    transition: scale .4s ease-in;
+}
+
+.avatar img:hover {
+    scale: 1.5;
+}
+
+/* !Game css */
+.desginSquare {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 100px;
+}
+
+/* .desgin {
+    margin: 22px;
+    display: inline-block;
+} */
+
+.line {
+    width: 35px;
+    height: 8px;
+    cursor: pointer;
+
+}
+
+@keyframes showOut {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes showIn {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+
+}
+
+@keyframes PopUp {
+    0% {
+        transform: translate(-50%, -50%);
+        transform: scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        transform: scale(1);
+    }
+
+}
+
+.animate_PopUp {
+    animation: PopUp .4s linear;
+}
+
+.animateShowIn {
+    animation: showIn .4s linear;
+    transform-origin: center;
+}
+
+.animate {
+    animation: showOut .4s linear;
+    transform-origin: center;
+}
+
+.squareHidden {
+    visibility: hidden;
+}
+
+.squareShown {
+    visibility: visible;
+}
+
+.line:hover,
+.vertical:hover {
+    background-color: black;
+    opacity: 0.6;
+}
+
+.flexBTN {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.vertical {
+    width: 8px;
+    height: 47px;
+    /* margin: 15.5px; */
+    /* padding: 10px; */
+    cursor: pointer;
+}
+
+.square {
+    width: 35px;
+    height: 45px;
+    background-color: black;
+    /* margin: 22px; */
+}
+
+
+.active.red,
+.red {
+    background-color: red;
+}
+
+.active.blue,
+.blue {
+    background-color: blue;
+}
+
+.show-box,
+.show-mode {
+    background-color: rgb(51 65 85);
+}

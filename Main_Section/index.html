@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dots and Boxes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .containerButton>button {
+            @apply rounded-md p-2 mx-12 font-bold;
+            min-width: 120px;
+        }
+        
+        
+        .containerButton{
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>
+
+<body class="bg-black h-screen">
+    <main class="relative top-1/2 -translate-y-1/2  ">
+        <div class="title">
+            <div class="text-white flex text-8xl justify-center">
+                <p class="text-red-500 font-bold mx-5">Dots</p>
+                <p class="font-bold">&</p>
+                <p class="text-blue-500 font-bold mx-5">Boxes</p>
+            </div>
+            <br><br><br>
+            <div class="containerButton text-white">
+                <button class="bg-red-500 comp">Computer</button>
+                <button class="bg-blue-500 player">Player</button>
+            </div>
+        </div>
+
+
+        <div class="flex justify-center  items-center">
+            <div class="loading_Animate unshown">
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <circle id="test" cx="40" cy="40" r="32"></circle>
+                    </svg>
+                </div>
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <rect x="8" y="8" width="64" height="64"></rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelector('.comp').addEventListener('click', e => {
+            setTimeout(() => {
+                window.location.href = "../Ai_Section/Ai_index.html";
+            }, 2000)
+            document.querySelector('.title').classList.add('unshown');
+            document.querySelector('.loading_Animate').classList.remove('unshown');
+        })
+        document.querySelector('.player').addEventListener('click', e => {
+            setTimeout(() => {
+                window.location.href = "../Pvp_Section/Pvp_index.html";
+            }, 2000);
+            document.querySelector('.title').classList.add('unshown');
+            document.querySelector('.loading_Animate').classList.remove('unshown');
+        })
+    </script>
+</body>
+
+</html>
